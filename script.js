@@ -9,3 +9,9 @@ var Passengers = getColumn(url, 8);
 
 // functions could be something like searching for large airports by country?
 // or it could be finding the largest airport averaged over many years?
+
+//thanks for linking every column, 
+//I think it should be searching for the largest airports by country,
+//because if airports are busy they have to be safe and like 
+//good? and it could help people with planning if it has to have
+//a real world affect. 
