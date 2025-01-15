@@ -17,27 +17,29 @@ var Passengers = getColumn(url, 8);
 //a real world affect. 
 
 //----------------------------------------------------------------------------
-///This function will find the airports on the list from the most recent year,
+///This function will search airports on the list from the most recent year(2016),
 //and then finds the busiest from the most recent year.
+//
  
 CODE!!!!!!!
 
 //---------------------------------------------------------------------------
-//This checks all the visiters on the list and returns the least busiest airport.
+//This checks all the visiters on the list 
+//and returns the least busiest airport from the year 2016.
 
 CODE!!!!!!!
 
 //---------------------------------------------------------------------------
-//Find the average total across all airports
+//Find the average total across all airports from 2015-2016
 
 CODE!!!!!!!
 
 //---------------------------------------------------------------------------
-//finds all airports with the passenger total being higher than 49 million
+//finds all airports with the passenger total being higher than 49 million from 2014-2016
 
 CODE!!!!!!!
 
 //---------------------------------------------------------------------------
-//Prints all airports from florida and then prints airports from 2010-2012
+//Checks all airports from florida and then prints airports that were busy from 2012-2016
 
 CODE!!!!!!!
