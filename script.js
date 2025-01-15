@@ -3,7 +3,7 @@ var Rank = getColumn(url, 2);
 var Year = getColumn(url, 3);
 var Airport = getColumn(url, 4);
 var Airport_Code = getColumn(url, 5);
-var location = getColumn(url, 6);
+var Airportlocation = getColumn(url, 6);
 var Country = getColumn(url, 7);
 var Passengers = getColumn(url, 8);
 
@@ -19,27 +19,35 @@ var Passengers = getColumn(url, 8);
 //----------------------------------------------------------------------------
 ///This function will search airports on the list from the most recent year(2016),
 //and then finds the busiest from the most recent year.
-//
- 
-CODE!!!!!!!
+function getBusiestAirport(){
+    var max = 0;
+    var maxAirport = "";
+    for (i < 0; i < Passengers.length; i++){
+        if (Passengers[i] >= max){
+            max = Passengers[i];
+            maxAirport = Airport[i];
+        }
+    }
 
+    return maxAirport;
+}
+
+console.log(getBusiestAirport())
 //---------------------------------------------------------------------------
 //This checks all the visiters on the list 
 //and returns the least busiest airport from the year 2016.
 
-CODE!!!!!!!
 
 //---------------------------------------------------------------------------
 //Find the average total across all airports from 2015-2016
 
-CODE!!!!!!!
 
 //---------------------------------------------------------------------------
-//finds all airports with the passenger total being higher than 49 million from 2014-2016
+//if there is an airport from united states in 2016, print 
 
-CODE!!!!!!!
+
 
 //---------------------------------------------------------------------------
-//Checks all airports from florida and then prints airports that were busy from 2012-2016
+//Checks all airports from florida and then prints airports that were busy from 2013-2016
+//THIS SHOULD PRINT ("Miami International Airport", "Orlando International Airport", "Miami International Airport")
 
-CODE!!!!!!!
