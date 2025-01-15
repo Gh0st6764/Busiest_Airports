@@ -15,3 +15,29 @@ var Passengers = getColumn(url, 8);
 //because if airports are busy they have to be safe and like 
 //good? and it could help people with planning if it has to have
 //a real world affect. 
+
+//----------------------------------------------------------------------------
+///This function will find the airports on the list from the most recent year,
+//and then finds the busiest from the most recent year.
+ 
+CODE!!!!!!!
+
+//---------------------------------------------------------------------------
+//This checks all the visiters on the list and returns the least busiest airport.
+
+CODE!!!!!!!
+
+//---------------------------------------------------------------------------
+//Find the average total across all airports
+
+CODE!!!!!!!
+
+//---------------------------------------------------------------------------
+//finds all airports with the passenger total being higher than 49 million
+
+CODE!!!!!!!
+
+//---------------------------------------------------------------------------
+//Prints all airports from florida and then prints airports from 2010-2012
+
+CODE!!!!!!!
