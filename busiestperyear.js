@@ -12,7 +12,6 @@ function rankingAirports(years){
 var lairport = [];   
 var ranks = [];  
 for(var i=0; i<Year.length; i++){
-    // console.log(Year[i])
     if(Year[i]==years){
     lairport.push(Airport[i]);
     ranks.push(Rank[i]);
