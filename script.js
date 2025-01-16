@@ -10,14 +10,17 @@ var Passengers = getColumn(url, 7);
 //----------------------------------------------------------------------------
 ///This function will search airports on the list from the most recent year(2016),
 //and then finds the busiest from the most recent year.
+
+// decides if there are higher or lower passengers 
 function getBusiestAirport(){
     var max = 0;
     var maxAirport = "";
     for (i = 0; i < Passengers.length; i++){
         console.log(Passengers[i])
         if (parseFloat(Passengers[i]) > max){
-            console.log("help")
+//prints the most populated and busiest airports
             max = parseFloat(Passengers[i]);
+    //links the highest number with an airport
             maxAirport = Airport[i];
         }
     }
@@ -31,40 +34,68 @@ function getBusiestAirport(){
 //and returns the least busiest airport from the year 2016.
 
 function getCalmestAirport(){
+//One of the largest numbers, if anything is below its added to the list 
     var min = 1000000000000;
     var minAirport = "";
     for (i = 0; i < Passengers.length; i++){
         // console.log(Passengers[i])
         if (parseFloat(Passengers[i]) <= min){
+    //cycles through.........
             min = parseFloat(Passengers[i]);
             minAirport = Airport[i];
         }
     }
+.
 
     return minAirport;
 }
 
 console.log(getCalmestAirport())
-
-//---------------------------------------------------------------------------
-//Find the average total across all airports from 2015-2016
-
-
-
 //---------------------------------------------------------------------------
 //if there is an airport from united states in 2016, print 
 
-
-function printAirports2016() {
+function printUSAairports2016() {
     for (i = 0; i < Year.length; i++) {
-        if (Year[i] == 2016) {
+        if (Year[i] == 2016 && Country[i] === "United States") {
             console.log(Airport[i]);
         }
     }
 }
 
-printAirports2016();
-
+console.log (USAairports2016());
 //---------------------------------------------------------------------------
-//Checks all airports from florida and then prints airports that were busy from 2013-2016
-//THIS SHOULD PRINT ("Miami International Airport", "Orlando International Airport", "Miami International Airport")
+// the function of this code is to recieve a year and rank, and returns the respective airport name, such as the 8th most busy airport in 2015
+// @years{number} this must be between 2010 and 2016 since that is what the data set covers, and it needs to be in the format of "2011.0", or "2016.0"
+function rankingAirports(years){
+    var lairport = [];   
+    var ranks = [];  
+    for(var i=0; i<Year.length; i++){
+        if(Year[i]==years){
+        lairport.push(Airport[i]);
+        ranks.push(Rank[i]);
+        }
+    }
+    console.log(lairport);
+    console.log(ranks);
+    var num = BusiestAirportsPerYear(ranks, 8);
+    console.log(lairport[num]);
+    }
+    //@numbers{list} is the list of ranks
+    //@targetNumber{number} this is the rank of how busy the airport is per year, no letters accepted!
+    function BusiestAirportsPerYear (numbers, targetNumber){
+        var minIndex = 0;
+        var maxIndex = numbers.length-1;
+        while(minIndex <= maxIndex){
+            var midIndex = Math.floor((minIndex+maxIndex) /2);
+            if(numbers[midIndex] == targetNumber){
+                return midIndex;
+            }
+            else if (targetNumber > numbers[midIndex]){
+                minIndex = midIndex +1; }
+                else { maxIndex = midIndex - 1;}
+        }
+        return -1;
+    }
+    
+    rankingAirports("2015.0")
+    
