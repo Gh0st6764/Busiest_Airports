@@ -1,6 +1,3 @@
-//MICHAEL!!!!!!!!!!!
-//I'll do the first to and if I have time I will do three, 
-//I'll work on it tonight, 
 var url = "https://raw.githubusercontent.com/b-mcavoy/datasets/refs/heads/main/Transportation/Busiest%20Airports.csv";
 var Rank = getColumn(url, 1);
 var Year = getColumn(url, 2);
@@ -28,7 +25,7 @@ function getBusiestAirport(){
     return maxAirport;
 }
 
-console.log(getBusiestAirport())
+ console.log(getBusiestAirport())
 //---------------------------------------------------------------------------
 //This checks all the visiters on the list 
 //and returns the least busiest airport from the year 2016.
@@ -53,10 +50,20 @@ console.log(getCalmestAirport())
 //Find the average total across all airports from 2015-2016
 
 
+
 //---------------------------------------------------------------------------
 //if there is an airport from united states in 2016, print 
 
 
+function printAirports2016() {
+    for (i = 0; i < Year.length; i++) {
+        if (Year[i] == 2016) {
+            console.log(Airport[i]);
+        }
+    }
+}
+
+printAirports2016();
 
 //---------------------------------------------------------------------------
 //Checks all airports from florida and then prints airports that were busy from 2013-2016
