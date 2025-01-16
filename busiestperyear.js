@@ -6,8 +6,8 @@ var Airport_Code = getColumn(url, 4);
 var airportlocation = getColumn(url, 5);
 var Country = getColumn(url, 6);
 var Passengers = getColumn(url, 7);
-// you search first by year, then by rank
-
+// the function of this code is to recieve a year and rank, and returns the respective airport name, such as the 8th most busy airport in 2015
+// @years{number} this must be between 2010 and 2016 since that is what the data set covers, and it needs to be in the format of "2011.0", or "2016.0"
 function rankingAirports(years){
 var lairport = [];   
 var ranks = [];  
@@ -22,7 +22,8 @@ console.log(ranks);
 var num = BusiestAirportsPerYear(ranks, 8);
 console.log(lairport[num]);
 }
-// you search first by year, then by rank
+//@numbers{list} is the list of ranks
+//@targetNumber{number} this is the rank of how busy the airport is per year, no letters accepted!
 function BusiestAirportsPerYear (numbers, targetNumber){
     var minIndex = 0;
     var maxIndex = numbers.length-1;
