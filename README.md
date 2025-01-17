@@ -1,7 +1,8 @@
 # Busiest Airports
 function getBusiestAirport()
-///This function will search airports on the list from the most recent year(2016),
-//and then finds the busiest from the most recent year.
+//This function will search airports on the listlooking to find the busiest one, it then return the answer
+//@Max{number} this is a variabe constantly changed by the computer as it finds a new largest, it does not need to be edited
+
 *
 function getCalmestAirport(){
 //This checks all the visiters on the list 
