@@ -1,7 +1,8 @@
 # Busiest Airports
 *function getBusiestAirport()
 *//This function will search airports on the listlooking to find the busiest one, it then return the answer
-*//@Max{number} this is a variabe constantly changed by the computer as it finds a new largest, it does not need to be edited
+*//@Max{number} this is a variable constantly changed by the computer as it finds a new largest, it does not need to be edited
+*//@warning{string} this is the error message if you accidently damage the code, it is changeable
 
 *
 *function getCalmestAirport(){
