@@ -52,7 +52,7 @@ function getCalmestAirport(){
 
 console.log(getCalmestAirport())
 //---------------------------------------------------------------------------
-//if there is an airport from united states in 2016, print 
+//if there is an airport from united states in 2016, it will print it
 
 function printUSAairports2016() {
     for (i = 0; i < Year.length; i++) {
@@ -98,34 +98,20 @@ function rankingAirports(years){
     }
     
     rankingAirports("2015.0")
-    //---------------------------------------------------------------------------
+//----------------------------------------------------------------------------
 
-// counts the number of airports in USA (2016) with passengers below a certain
-function SmallUSAairports2016() {
-    let count = 0;
-    for (i = 0; i < Year.length; i++) {
-        if (Year[i] == 2016 && Country[i] === "United States" && parseFloat(Passengers[i]) < 0) {
-            count++;
-        }
-    }
-    return SmallUSAairports2016
-}
-
-console.log(SmallUSAairports2016);
-
-//irports with fewer than 100 million passengers
-console.log(countSmallUSAairports2016(100000000));
-    
-
-//Total amount of passengers in USA
+// Function to calculate the total passengers from all USA airports in 2016
 function totalPassengersUSA2016() {
     let totalPassengers = 0;
     for (i = 0; i < Year.length; i++) {
-        if (Year[i] == 2016 && Country[i] === "United States") {
+        if (Year[i] == 2010 && Country[i].toLowerCase() == "canada".toLowerCase()) {
             totalPassengers += parseFloat(Passengers[i]);
         }
     }
     return totalPassengers;
 }
 
-console.log(totalPassengersUSA2016());
+// Example usage: Calculate total passengers
+console.log(`Total passengers from the airports: ${totalPassengersUSA2016()}`);
+
+    
