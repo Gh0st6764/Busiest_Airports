@@ -45,7 +45,7 @@ function getCalmestAirport(){
             minAirport = Airport[i];
         }
     }
-.
+
 
     return minAirport;
 }
