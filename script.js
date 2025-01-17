@@ -98,4 +98,34 @@ function rankingAirports(years){
     }
     
     rankingAirports("2015.0")
+    //---------------------------------------------------------------------------
+
+// counts the number of airports in USA (2016) with passengers below a certain
+function SmallUSAairports2016() {
+    let count = 0;
+    for (i = 0; i < Year.length; i++) {
+        if (Year[i] == 2016 && Country[i] === "United States" && parseFloat(Passengers[i]) < 0) {
+            count++;
+        }
+    }
+    return SmallUSAairports2016
+}
+
+console.log(SmallUSAairports2016);
+
+//irports with fewer than 100 million passengers
+console.log(countSmallUSAairports2016(100000000));
     
+
+//Total amount of passengers in USA
+function totalPassengersUSA2016() {
+    let totalPassengers = 0;
+    for (i = 0; i < Year.length; i++) {
+        if (Year[i] == 2016 && Country[i] === "United States") {
+            totalPassengers += parseFloat(Passengers[i]);
+        }
+    }
+    return totalPassengers;
+}
+
+console.log(totalPassengersUSA2016());
