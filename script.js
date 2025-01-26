@@ -8,27 +8,19 @@ var Country = getColumn(url, 6);
 var Passengers = getColumn(url, 7);
 
 //----------------------------------------------------------------------------
-///This function will search airports on the list from the most recent year(2016),
-//and then finds the busiest from the most recent year.
-
-// decides if there are higher or lower passengers 
-function getBusiestAirport(){
+function getBusiestAirportInYear(year) {
     var max = 0;
     var maxAirport = "";
-    for (i = 0; i < Passengers.length; i++){
-        console.log(Passengers[i])
-        if (parseFloat(Passengers[i]) > max){
-//prints the most populated and busiest airports
+    for (var i = 0; i < Passengers.length; i++) {
+        if (Year[i] == year && parseFloat(Passengers[i]) > max) {
             max = parseFloat(Passengers[i]);
-    //links the highest number with an airport
             maxAirport = Airport[i];
         }
     }
-
     return maxAirport;
 }
 
- console.log(getBusiestAirport())
+console.log(getBusiestAirportInYear(2016));
 //---------------------------------------------------------------------------
 //This checks all the visiters on the list 
 //and returns the least busiest airport from the year 2016.
@@ -52,17 +44,13 @@ function getCalmestAirport(){
 
 console.log(getCalmestAirport())
 //---------------------------------------------------------------------------
-//if there is an airport from united states in 2016, it will print it
-
-function printUSAairports2016() {
-    for (i = 0; i < Year.length; i++) {
-        if (Year[i] == 2016 && Country[i] === "United States") {
-            console.log(Airport[i]);
-        }
-    }
+//if there is an american airport from 2016 then print
+function getUSAairports2016() {
+    return Airport.filter((airport, index) => Year[index] == 2016 && Country[index] === "United States");
 }
 
-console.log (USAairports2016());
+// Example usage
+console.log(getUSAairports2016());
 //---------------------------------------------------------------------------
 // the function of this code is to recieve a year and rank, and returns the respective airport name, such as the 8th most busy airport in 2015
 // @years{number} this must be between 2010 and 2016 since that is what the data set covers, and it needs to be in the format of "2011.0", or "2016.0"
@@ -98,20 +86,27 @@ function rankingAirports(years){
     }
     
     rankingAirports("2015.0")
-//----------------------------------------------------------------------------
-
-// Function to calculate the total passengers from all USA airports in 2016
-function totalPassengersUSA2016() {
-    let totalPassengers = 0;
-    for (i = 0; i < Year.length; i++) {
-        if (Year[i] == 2010 && Country[i].toLowerCase() == "canada".toLowerCase()) {
-            totalPassengers += parseFloat(Passengers[i]);
+    //--------------------------------------------------------------------------------------------------------------
+    function countAirportsInYearAndCountry(year, country) {
+        let count = 0;
+        for (let i = 0; i < Year.length; i++) {
+            if (Year[i] == year && Country[i] === country) {
+                count++;
+            }
         }
+        return count;
     }
-    return totalPassengers;
+    
+    console.log(countAirportsInYearAndCountry(2016, "United States"));
+    
+//-------------------------------------------------------------------------------
+function totalPassengersByYearAndCountry(year, country) {
+    return Year.reduce((total, currentYear, index) => {
+        if (currentYear == year && Country[index] === country) {
+            return total + parseFloat(Passengers[index]);
+        }
+        return total;
+    }, 0);
 }
 
-// Example usage: Calculate total passengers
-console.log(`Total passengers from the airports: ${totalPassengersUSA2016()}`);
-
-    
+console.log(totalPassengersByYearAndCountry(2016, "United States"));
