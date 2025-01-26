@@ -7,6 +7,7 @@ var Airportlocation = getColumn(url, 5);
 var Country = getColumn(url, 6);
 var Passengers = getColumn(url, 7);
 
+
 //----------------------------------------------------------------------------
 function getBusiestAirportInYear(year) {
     var max = 0;
@@ -87,10 +88,12 @@ function rankingAirports(years){
     
     rankingAirports("2015.0")
     //--------------------------------------------------------------------------------------------------------------
-    function countAirportsInYearAndCountry(year, country) {
+    //@year{number} the year you want to search in
+    //@countrys{string} the country you want to search
+    function countAirportsInYearAndCountry(year, countrys) {
         let count = 0;
         for (let i = 0; i < Year.length; i++) {
-            if (Year[i] == year && Country[i] === country) {
+            if (Year[i] == year && Country[i] === countrys) {
                 count++;
             }
         }
@@ -100,13 +103,20 @@ function rankingAirports(years){
     console.log(countAirportsInYearAndCountry(2016, "United States"));
     
 //-------------------------------------------------------------------------------
-function totalPassengersByYearAndCountry(year, country) {
-    return Year.reduce((total, currentYear, index) => {
-        if (currentYear == year && Country[index] === country) {
-            return total + parseFloat(Passengers[index]);
+
+// Function to calculate the total passengers from all USA airports in 2016
+//@yeard{number} the year you want to search in
+//@prace{string} the country you want to search
+function totalPassengers(yeard, prace) {
+    let totalPassengers = 0;
+    for (i = 0; i < Year.length; i++) {
+        if (Year[i] == yeard && Country[i].toLowerCase() == prace.toLowerCase()) {
+            totalPassengers += parseFloat(Passengers[i]);
         }
-        return total;
-    }, 0);
+    }
+    return totalPassengers;
 }
 
-console.log(totalPassengersByYearAndCountry(2016, "United States"));
+// Example usage: Calculate total passengers
+console.log(`Total passengers from the airports: ${totalPassengers(2010, "canada")}`);
+
